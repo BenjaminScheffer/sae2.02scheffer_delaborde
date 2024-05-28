@@ -64,6 +64,11 @@ public class GrapheListe implements  Graphe{
 
 
 
+    /**
+     * Méthode qui permet de recuperer l'indice d'un noeud dans la liste de noeud
+     * @param n noeud dont on souhaite recupérer l'indice
+     * @return l'indice du noeud n
+     */
     public int getIndice(String n){
         return this.noeuds.indexOf(n);
     }
@@ -80,4 +85,23 @@ public class GrapheListe implements  Graphe{
     }
 
 
+    /**
+     * Méthode qui permet de récuperer la liste de noeuds
+     * @return la liste de noeuds
+     */
+    @Override
+    public List<String> listeNoeuds() {
+        return this.noeuds;
+    }
+
+    /**
+     * Méthode qui permet de connaitre les arcs que possède un noeud
+     * @param n noeud dont on veut connaitre ses arcs
+     * @return la liste des arcs partant du nœud n passée en paramètre.
+     */
+    @Override
+    public List<Arc> suivants(String n) {
+        int index = getIndice(n);
+        return this.adjacence.get(index).getArcs();
+    }
 }
