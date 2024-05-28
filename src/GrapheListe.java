@@ -72,6 +72,11 @@ public class GrapheListe implements  Graphe{
     public int getIndice(String n){
         return this.noeuds.indexOf(n);
     }
+
+    /**
+     * To string qui affiche le graphe
+     * @return
+     */
     public String toString(){
             String s = "";
             for (int i = 0; i < this.noeuds.size(); i++) {
