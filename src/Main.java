@@ -10,5 +10,7 @@ public class Main {
     graphe.ajouterArc("A","D",87);
     graphe.ajouterArc("B","E",11);
     graphe.ajouterArc("E","D",43);
+    System.out.println(graphe.toString());
+
     }
 }

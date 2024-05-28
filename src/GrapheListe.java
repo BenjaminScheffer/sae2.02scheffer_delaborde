@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class GrapheListe implements  Graphe{
 
@@ -29,37 +30,54 @@ public class GrapheListe implements  Graphe{
     public void ajouterArc(String depart, String destination, double cout) {
         if (!noeuds.contains(depart)){
             noeuds.add(depart);
+            int indice  = getIndice(depart);
+            this.adjacence.add(indice, new Arcs());
         }
         if (!noeuds.contains(destination)){
             noeuds.add(destination);
+            int indice  = getIndice(destination);
+            this.adjacence.add(indice, new Arcs());
         }
         int indexDepart = getIndice(depart);
 
-        if(this.adjacence.get(indexDepart)==null){
-            Arcs arc = new Arcs();
-            arc.ajouterArc(new Arc(destination,cout));
-            this.adjacence.add(indexDepart,arc);
-        }else{
+        try{
             Arcs list = this.adjacence.get(indexDepart);
             int i = 0;
             boolean arret = false;
             while (!arret && i!=list.getArcs().size()){
-             if(list.getArcs().get(i).getDestination().equals(destination)){
-                 arret = true;
-             }
-             i++;
+                if(list.getArcs().get(i).getDestination().equals(destination)){
+                    arret = true;
+                }
+                i++;
             }
             if(arret){
                 list.getArcs().get(i).setValeur(cout);
             }else{
                 list.getArcs().add(new Arc(destination,cout));
             }
+        }catch(IndexOutOfBoundsException e ){
+            Arcs arc = new Arcs();
+            arc.ajouterArc(new Arc(destination, cout));
+            this.adjacence.add(indexDepart, arc);
         }
-
     }
+
+
 
     public int getIndice(String n){
         return this.noeuds.indexOf(n);
     }
+    public String toString(){
+            String s = "";
+            for (int i = 0; i < this.noeuds.size(); i++) {
+                s = s + this.noeuds.get(i) + "=> ";
+                for (int j = 0; j < this.adjacence.get(i).getArcs().size(); j++) {
+                    s = s + this.adjacence.get(i).getArcs().get(j).getDestination() + "(" + this.adjacence.get(i).getArcs().get(j).getValeur() + ")" + ", ";
+                }
+                s = s + "\n";
+            }
+            return s;
+    }
+
 
 }
