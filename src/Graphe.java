@@ -11,5 +11,5 @@ public interface Graphe {
      * @param n noeud dont on veut connaitre ses arcs
      * @return la liste des arcs partant du nœud n passée en paramètre.
      */
-    public List<Arc> suivants(String n);
+    public List<Arcs> suivants(String n);
 }
