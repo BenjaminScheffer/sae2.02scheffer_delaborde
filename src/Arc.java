@@ -30,4 +30,12 @@ public class Arc {
     public double getValeur() {
         return valeur;
     }
+
+    /**
+     * Setter qui permet de changer la valeur de l'arc quand on insert un arc qui existe deja
+     * @param i
+     */
+    public void setValeur(double i ){
+        this.valeur = i;
+    }
 }
