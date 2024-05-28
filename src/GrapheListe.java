@@ -83,8 +83,8 @@ public class GrapheListe implements  Graphe{
      * @return la liste des arcs partant du nœud n passée en paramètre.
      */
     @Override
-    public List<Arcs> suivants(String n) {
+    public List<Arc> suivants(String n) {
         int index = getIndice(n);
-        return this.adjacence;
+        return this.adjacence.get(index).getArcs();
     }
 }
