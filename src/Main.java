@@ -12,7 +12,10 @@ public class Main {
     graphe.ajouterArc("E","D",43);
     System.out.println(graphe.toString());
     try {
+        System.out.println(BellmanFord.pointfixe(graphe, "D"));
+        System.out.println(BellmanFord.pointfixe(graphe, "D").calculerChemin("E"));
         System.out.println(BellmanFord.pointfixe(graphe, "A"));
+        System.out.println(BellmanFord.pointfixe(graphe, "A").calculerChemin("C"));
     }catch(Exception e) {
         System.out.println(e.getMessage());
     }
