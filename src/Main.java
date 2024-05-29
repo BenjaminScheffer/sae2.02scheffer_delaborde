@@ -12,5 +12,6 @@ public class Main {
     graphe.ajouterArc("E","D",43);
     System.out.println(graphe.toString());
 
+    System.out.println(BellmanFord.pointfixe(graphe,"A"));
     }
 }
