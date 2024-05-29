@@ -38,4 +38,8 @@ public class Arc {
     public void setValeur(double i ){
         this.valeur = i;
     }
+
+    public boolean egal(Arc a){
+        return this.getValeur()==a.getValeur() && this.getDestination()==a.getDestination();
+    }
 }
