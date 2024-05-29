@@ -11,7 +11,10 @@ public class Main {
     graphe.ajouterArc("B","E",11);
     graphe.ajouterArc("E","D",43);
     System.out.println(graphe.toString());
-
-    System.out.println(BellmanFord.pointfixe(graphe,"A"));
+    try {
+        System.out.println(BellmanFord.pointfixe(graphe, "A"));
+    }catch(Exception e) {
+        System.out.println(e.getMessage());
+    }
     }
 }

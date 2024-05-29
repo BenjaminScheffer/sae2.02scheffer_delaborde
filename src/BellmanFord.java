@@ -5,16 +5,21 @@ public class BellmanFord {
      * @param n
      * @return
      */
-    public static Valeur pointfixe(Graphe g, String n ){
+    public static Valeur pointfixe(Graphe g, String n ) throws Exception {
         //création de la valeur
         Valeur val = new Valeur();
+        int indice = 0;
         //Initialisation de toutes les valeurs donc : 0 pour le String n et =l'infini pour le reste
         for(int i = 0;i<g.listeNoeuds().size();i++){
             if(g.listeNoeuds().get(i).equals(n)){
                 val.setValeur(n,0);
+                indice++;
             }else{
                 val.setValeur(g.listeNoeuds().get(i),Double.MAX_VALUE);
             }
+        }
+        if(indice!=1){
+            throw new Exception("Le point de départ n'existe pas");
         }
         //boucle
         boolean arret = false;
