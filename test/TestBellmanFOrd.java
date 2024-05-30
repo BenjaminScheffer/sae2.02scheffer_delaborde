@@ -35,6 +35,11 @@ public class TestBellmanFOrd {
         assertEquals(v.getValeur("C"),10.0);
         assertEquals(v.getValeur("D"),0.0);
         assertEquals(v.getValeur("E"),34.0);
+        assertEquals(v.getParent("A"),"C");
+        assertEquals(v.getParent("B"),"D");
+        assertEquals(v.getParent("C"),"D");
+        assertEquals(v.getParent("D"),null);
+        assertEquals(v.getParent("E"),"B");
     }
     @Test
     public void Test2()throws Exception{
@@ -52,5 +57,10 @@ public class TestBellmanFOrd {
         assertEquals(v.getValeur("C"),76.0);
         assertEquals(v.getValeur("D"),66.0);
         assertEquals(v.getValeur("E"),23.0);
+        assertEquals(v.getParent("A"),null);
+        assertEquals(v.getParent("B"),"A");
+        assertEquals(v.getParent("C"),"D");
+        assertEquals(v.getParent("D"),"E");
+        assertEquals(v.getParent("E"),"B");
     }
 }
