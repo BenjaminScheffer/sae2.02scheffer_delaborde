@@ -1,0 +1,41 @@
+fonction pointFixe(Graphe g InOut,Noeud depart)
+Début
+pour i = 0 i < g.listeNoeud().size() i ++ 
+	si(L(i) = depart)alors 
+		l(g.listeNoeud().get(i))<=0;
+	sinon	
+		L(g.listeNoeud().get(i)) <= +l'infinit
+	fsi
+fpour 
+boolean arret <= false
+tant que nonarret faire 
+   arret <= true
+	pour i = 0; i<g.listeNoeud().size(); i ++ faire 
+
+		pour j = 0 ; j<g.listeNoeud().get(i).size() ;j++ faire 
+			noeud <= g.suivants(g.listeNoeud().get(i)).get(j).getDestination());
+			int min = l(noeud);
+			l(n)= l(g.listeNoeuds().get(i))+g.suivants(ListeNoeuds.get(i).getDestination()).get(j).getCout())			
+	
+			si l(n) < min alors 
+				l(g.suivants(ListeNoeuds.get(i).getDestination()).get(j).getDestination())<=l(n)
+				Parent(g.suivants(ListeNoeuds.get(i).getDestination()).get(j).getDestination())<=l(g.listeNoeuds().get(i))
+				arret <= faux
+			fsi
+		 
+	fpour 
+
+
+ftant que 
+
+fin 
+
+Lexique : 
+l(x):double permet d'avoir la valeur d'un noeud 
+Parent (x) :Noeud permet d'avoir le noeud parent du noeud x 
+arret : boolean condition d'arret de la boucle tant que 
+ListeNoeud() : list liste des noeuds du graphe 
+suivants(x) : list liste des noeuds adjacents du noeud 
+min : entier valeur minimal des adjacent d'un noeud 
+fin lexique
+	
