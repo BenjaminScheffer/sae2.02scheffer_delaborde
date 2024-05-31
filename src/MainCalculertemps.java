@@ -21,6 +21,6 @@ public class MainCalculertemps {
         }
         fintime=System.nanoTime();
         temps = fintime-debuttime;
-        System.out.println(temps);
+        System.out.println(temps/1000000000);
     }
 }

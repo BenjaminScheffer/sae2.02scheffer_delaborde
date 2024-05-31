@@ -54,7 +54,6 @@ Fin
             if(g.suivants(u)==null){
                 return val;
             }
-            for(int i = 0;i<Q.size();i++){
                 for(int j = 0 ; j<g.suivants(u).size();j++){
                     double d = val.getValeur(u) + g.suivants(u).get(j).getValeur() ;
                     if(d<val.getValeur(g.suivants(u).get(j).getDestination())){
@@ -62,7 +61,7 @@ Fin
                         val.setParent(g.suivants(u).get(j).getDestination(),u);
                     }
                 }
-            }
+
         }
         return val;
     }
