@@ -19,5 +19,7 @@ public class MainBellmanFord {
         System.out.println(BellmanFord.pointfixe(graphe, "A"));
         System.out.println("Chemin pour aller a C");
         System.out.println(BellmanFord.pointfixe(graphe, "A").calculerChemin("C"));
+        GrapheListe g = new GrapheListe("graphes/Graphe1.txt");
+        System.out.println(g);
     }
 }
