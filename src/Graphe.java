@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 public interface Graphe {
     /**
      * Méthode qui permet de connaitre les noeuds d'un graphe
