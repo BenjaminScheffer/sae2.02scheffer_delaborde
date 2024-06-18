@@ -1,4 +1,10 @@
 import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GrapheListe implements  Graphe{
 
@@ -19,7 +25,25 @@ public class GrapheListe implements  Graphe{
         this.noeuds = new ArrayList<>();
         this.adjacence = new ArrayList<>();
     }
-
+    /**
+    *Constructeur qui prend en parametre le nom d'un fichier et qui construit le graphe correspondant
+     * @param s string du nom du fichier
+     */
+    public GrapheListe(String s ) throws IOException {
+        this.noeuds = new ArrayList<>();
+        this.adjacence = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader(s));
+        String ligne = br.readLine();
+        while(ligne != null){
+            String []lignesplit = ligne.split("\t");
+            String sommetdep = lignesplit[0];
+            String sommetdestination = lignesplit[1];
+            double val = Double.parseDouble(lignesplit[2]);
+            this.ajouterArc(sommetdep,sommetdestination,val);
+            ligne = br.readLine();
+        }
+        br.close();
+    }
     /**
      * Méthode qui permet d'ajouter un arc
      * @param depart noeud de depart de l'arc
